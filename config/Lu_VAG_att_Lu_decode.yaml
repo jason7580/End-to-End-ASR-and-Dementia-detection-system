@@ -1,0 +1,17 @@
+data:
+  corpus:
+    name: 'Lu'                   # Specify dataset
+    path: '/mnt/usb/jason3/cv-corpus-11.0-2022-09-21/zh-TW/wavs'          # Path to raw LibriSpeech dataset
+    dev_split: ['Ludev']              # Name of data splits to be used as validation set
+    test_split: ['VagmanualSliced']
+
+
+core:
+  config: '../LAS_Mandarin_PyTorch-master/config/Lu_asr_lstm4atthead-ctc2.yaml'
+  ckpt: '../LAS_Mandarin_PyTorch-master/ckpt/Lu_asr_lstm4atthead-ctc2_sd0/best_att.pth'
+
+decode:
+  beam_size: 4
+  min_len_ratio: 0.0
+  max_len_ratio: 10.0
+  ctc_weight: 0.0
